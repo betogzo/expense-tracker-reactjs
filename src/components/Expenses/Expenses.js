@@ -21,13 +21,19 @@ const Expenses = (props) => {
     </div>
   );
 
+  const liftId = (itemId) => {
+    props.deleteItem(itemId);
+  };
+
   if (filteredList.length > 0) {
     expensesContent = filteredList.map((exp) => (
       <ExpenseItem
         key={exp.id}
+        id={exp.id}
         title={exp.title}
         amount={exp.amount.toFixed(2)}
         date={exp.date}
+        onDeleteButton={liftId}
       />
     ));
   }

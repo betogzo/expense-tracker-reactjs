@@ -32,6 +32,7 @@ const ExpenseForm = (props) => {
       title: userInput.enteredTitle,
       amount: userInput.enteredAmount,
       date: new Date(userInput.enteredDate),
+      id: Math.floor(Math.random() * 100),
     };
 
     props.onSaveExpenseData(expenseData);
